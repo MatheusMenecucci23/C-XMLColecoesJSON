@@ -13,7 +13,7 @@ ITEM 2 - COLEÇÕES <br>
 <br>
 02.01 - MATRIZES <br>
 02.02 - LISTAS <br>
-02.03 - CONJUNTO <br>
-02.04 - DICIONÁRIOS <br>
+02.03 - DICIONÁRIOS <br>
+02.04 - CONJUNTO <br>
 02.05 - FILAS <br>
 02.06 - PERSONLIZADA <br>
