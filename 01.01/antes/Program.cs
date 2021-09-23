@@ -36,6 +36,7 @@ namespace _01._03
             var xmlSerializer = new XmlSerializer(typeof(LojaDeFilmes));
 
             //serializando..
+            //escrevendo os dados dentro de um escritor de string
             using (var stringWriter = new StringWriter())
             {
                 xmlSerializer.Serialize(stringWriter, dados);
@@ -43,14 +44,17 @@ namespace _01._03
             }
 
             //criando um arquvio Loja.xml com o tipo de acesso para escrever/editor
+            //file stream implemnta um disposable, por isso é interessantes colocar o using
             using (var fileStream = new FileStream("Movie.xml", FileMode.Create, FileAccess.Write))
             {
+                //inserindo os dados dentro do arquivo 
                 xmlSerializer.Serialize(fileStream, dados);
             }
 
 
-            //AQUI VEM O CÓDIGO DO SEGUNDO SISTEMA
+            //AQUI VEM O CÓDIGO DO SEGUNDO SISTEMA, ESSA VAI CONSUMIR O ARQUIVO XML
             //Desserialização
+
             //Convertendo um arquivo XML para uma classe loja de filmes
             var xmlSerializer2 = new XmlSerializer(typeof(MovieStore));
 
@@ -59,6 +63,7 @@ namespace _01._03
             //abrindo o arquivo permitindo o a leitura do mesmo para desseraializar
             using (var fileStream = new FileStream("Movie.xml", FileMode.Open, FileAccess.Read))
             {
+                //o fileStream contem os arquivos que serão desserializado
                 movieStore = (MovieStore)xmlSerializer2.Deserialize(fileStream);
             }
             foreach (var filme in movieStore.Movies)

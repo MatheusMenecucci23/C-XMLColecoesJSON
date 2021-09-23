@@ -13,7 +13,7 @@ namespace _02._04
             var ameaca = new Filme("Episódio I: A Ameaça Fantasma", 1999);
 
             //CRIANDO UM DICIONÁRIO
-            //passando o valor da chave, e o tipo de valor que será guardadp
+            //passando o valor da chave - no caso int - , e o tipo de valor que será guardado - no caso filme -
             Dictionary<int, Filme> filmes = new Dictionary<int, Filme>();
 
             //ADICIONANDO elementos NO DICIONÁRIO
@@ -65,13 +65,14 @@ namespace _02._04
             Console.WriteLine("Qual é o filme 34672 agora? "+ filmes[34672]);
 
             //buscando uma chave que não existe: 34673
+            //estoura um erro e aplicação para de funcionar
             //Console.WriteLine("Buscando uma chave que não existe: 34673" + filmes[34673]);
 
             //verificando se a chave 34673 existe
             Console.WriteLine("Verificando se a chave 34673 existe "+ filmes.ContainsKey(34673));
 
             //buscando uma chave 34673 de forma segura e lançando uma aviso na tela
-            //buscando o id e gernado um "retorno/saída" com out
+            //buscando o id e gerando um "retorno/saída" com out que pode ser usada
             filmes.TryGetValue(34673, out Filme filme34673);
             if (filme34673 == null)
             {
@@ -79,6 +80,7 @@ namespace _02._04
             }
 
         }
+        //implementou a interface IComparable
         public class Filme : IComparable
         {
             public Filme(string titulo, int ano)

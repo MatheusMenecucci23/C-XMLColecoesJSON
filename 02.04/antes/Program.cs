@@ -15,7 +15,10 @@ namespace _02._03
             //SETS = CONJUNTOS
 
             //declarando set/conjuntos de filmes
+            //criando uma coleção HashSet
+            //HashSet<Filme> filmes = new HashSet<Filme>();
             ISet<Filme> filmes = new HashSet<Filme>();
+
             //adicionando: esperanca, imperio, retorno
             filmes.Add(esperanca);
             filmes.Add(imperio);
